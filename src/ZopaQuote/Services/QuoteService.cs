@@ -6,7 +6,7 @@
     internal class QuoteService : IQuoteService
     {
         private readonly IOfferService _offerService;
-        private const int LoadTermMonths = 36;
+        private const int LoanTermMonths = 36;
 
         public QuoteService(IOfferService offerService)
         {
@@ -48,14 +48,14 @@
                 amountToFulfill -= amountUsed;
                 _offerService.DeductAvailable(bestOffer, amountUsed);
 
-                var offerInterest = LoadTermMonths * bestOffer.Rate * amountUsed;
+                var offerInterest = LoanTermMonths * bestOffer.Rate * amountUsed;
                 totalInterest += offerInterest;
 
                 amountToFulfill -= bestOffer.AmountAvailable;
             }
 
             decimal totalRepayment = requestAmount + totalInterest;
-            decimal monthlyRepayment = totalRepayment / LoadTermMonths;
+            decimal monthlyRepayment = totalRepayment / LoanTermMonths;
             var rate = requestAmount / totalRepayment;
 
             return new Quote(requestAmount, rate, monthlyRepayment, totalRepayment);

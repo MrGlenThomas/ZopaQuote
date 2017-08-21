@@ -6,11 +6,15 @@
     internal class QuoteService : IQuoteService
     {
         private readonly IOfferService _offerService;
+        private readonly IInterestCalculator _interestCalculator;
+        private readonly IQuoteFactory _quoteFactory;
         private const int LoanTermMonths = 36;
 
-        public QuoteService(IOfferService offerService)
+        public QuoteService(IOfferService offerService, IInterestCalculator interestCalculator, IQuoteFactory quoteFactory)
         {
             _offerService = offerService;
+            _interestCalculator = interestCalculator;
+            _quoteFactory = quoteFactory;
         }
 
         /// <summary>
@@ -48,17 +52,15 @@
                 amountToFulfill -= amountUsed;
                 _offerService.DeductAvailable(bestOffer, amountUsed);
 
-                var offerInterest = LoanTermMonths * bestOffer.Rate * amountUsed;
+                var offerInterest = _interestCalculator.GetInterest(amountUsed, bestOffer.Rate, LoanTermMonths);
                 totalInterest += offerInterest;
 
-                amountToFulfill -= bestOffer.AmountAvailable;
+                amountToFulfill -= amountUsed;
             }
 
-            decimal totalRepayment = requestAmount + totalInterest;
-            decimal monthlyRepayment = totalRepayment / LoanTermMonths;
-            var rate = requestAmount / totalRepayment;
+            var quote = _quoteFactory.Create(requestAmount, LoanTermMonths, totalInterest);
 
-            return new Quote(requestAmount, rate, monthlyRepayment, totalRepayment);
+            return quote;
         }
     }
 }

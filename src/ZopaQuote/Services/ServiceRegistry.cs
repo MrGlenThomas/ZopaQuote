@@ -12,6 +12,8 @@
                 .AddSingleton<IOfferService, OfferService>()
                 .AddSingleton<IOfferProvider, CsvOfferProvider>()
                 .AddSingleton<IQuoteFormatter, QuoteFormatter>()
+                .AddSingleton<IQuoteFactory, QuoteFactory>()
+                .AddSingleton<IInterestCalculator, InterestCalculator>()
                 .BuildServiceProvider();
         }
     }

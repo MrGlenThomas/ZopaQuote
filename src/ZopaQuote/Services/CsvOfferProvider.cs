@@ -6,7 +6,7 @@
     using Model;
 
     /// <summary>
-    /// Provides offers from storage
+    /// Provides offers from CSV file storage
     /// </summary>
     internal class CsvOfferProvider : IOfferProvider
     {

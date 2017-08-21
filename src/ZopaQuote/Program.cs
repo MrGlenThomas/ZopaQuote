@@ -1,6 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("ZopaQuote.UnitTests")]
+[assembly: InternalsVisibleTo("ZopaQuote.IntegrationTests")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
 namespace ZopaQuote
 {
@@ -12,7 +14,7 @@ namespace ZopaQuote
     {
         static void Main(string[] args)
         {
-            var serviceProvider = BuildContainer();
+            var serviceProvider = ServiceRegistry.BuildContainer();
 
             try
             {
@@ -44,16 +46,6 @@ namespace ZopaQuote
             }
 
             Console.ReadKey();
-        }
-
-        private static IServiceProvider BuildContainer()
-        {
-            return new ServiceCollection()
-                .AddSingleton<IQuoteService, QuoteService>()
-                .AddSingleton<IOfferService, OfferService>()
-                .AddSingleton<IOfferProvider, CsvOfferProvider>()
-                .AddSingleton<IQuoteFormatter, QuoteFormatter>()
-                .BuildServiceProvider();
         }
     }
 }

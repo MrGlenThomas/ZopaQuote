@@ -36,13 +36,13 @@
             [Fact]
             public void DoesntReturnOffersWithNoFundsAvailable()
             {
-                var excpectedBestOffer = new Offer("Jeff", 0.003m, 642);
+                var excpectedBestOffer = new Offer("Tim", 0.0001m, 15);
 
                 var offers = new[]
                 {
                     new Offer("Bob", 0.23m, 345),
                     new Offer("Alice", 0.05m, 0),
-                    new Offer("Tim", 0.0001m, 15),
+                    new Offer("Jeff", 0.003m, 642),
                     new Offer("Henry", 0.0541m, 0),
                     excpectedBestOffer
                 };

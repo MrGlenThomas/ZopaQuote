@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZopaQuote", "ZopaQuote\ZopaQuote.csproj", "{AD8851B8-4EEA-4B76-8089-77849675CCFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZopaQuote", "ZopaQuote\ZopaQuote.csproj", "{AD8851B8-4EEA-4B76-8089-77849675CCFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZopaQuote.UnitTests", "ZopaQuote.UnitTests\ZopaQuote.UnitTests.csproj", "{E7800C8A-6E12-47B5-9CDA-4ABD566B72E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZopaQuote.UnitTests", "ZopaQuote.UnitTests\ZopaQuote.UnitTests.csproj", "{E7800C8A-6E12-47B5-9CDA-4ABD566B72E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZopaQuote.IntegrationTests", "ZopaQuote.IntegrationTests\ZopaQuote.IntegrationTests.csproj", "{29E36F90-BEDA-48DF-821C-6DDD2FD5C697}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E7800C8A-6E12-47B5-9CDA-4ABD566B72E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7800C8A-6E12-47B5-9CDA-4ABD566B72E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7800C8A-6E12-47B5-9CDA-4ABD566B72E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E36F90-BEDA-48DF-821C-6DDD2FD5C697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E36F90-BEDA-48DF-821C-6DDD2FD5C697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E36F90-BEDA-48DF-821C-6DDD2FD5C697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E36F90-BEDA-48DF-821C-6DDD2FD5C697}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

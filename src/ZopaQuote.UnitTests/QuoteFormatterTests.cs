@@ -9,6 +9,7 @@
     public class QuoteFormatterTests
     {
         [Theory]
+        [ClassData(typeof(FormatterTestData))]
         public void FormatterCreatesExpectedString(Quote quote, string expectedOutput)
         {
             var quoteFormatter = new QuoteFormatter();
@@ -22,7 +23,7 @@
     {
         private readonly List<object[]> _data = new List<object[]>
         {
-            new object[] { new Quote(1000, 0.28397m, 97.8177m, 3521.440m), "Requested amount: £1000\r\nRate: 0.3%\r\nMonthly repayment: £97.82\r\nTotal repayment: £3521.44" },
+            new object[] { new Quote(1000, 0.28397m, 97.8177m, 3521.440m), "Requested amount: £1000\r\nRate: 0.3%\r\nMonthly repayment: £97.82\r\nTotal repayment: £3521.44\r\n" },
         };
 
         public IEnumerator<object[]> GetEnumerator() => _data.GetEnumerator();

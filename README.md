@@ -3,15 +3,15 @@
 
 ## The application takes arguments in the form:
 
-    cmd> [application] [market_file] [loan_amount]
+    cmd> dotnet run [market_file] [loan_amount]
 
 ### Example:
 
-    cmd> quote.exe market.csv 1500
+    cmd> dotnet run market.csv 1500
 
 ## The application produces output in the form:
 
-    cmd> [application] [market_file] [loan_amount]
+    cmd> dotnet run [market_file] [loan_amount]
     Requested amount: £XXXX
     Rate: X.X%
     Monthly repayment: £XXXX.XX
@@ -19,7 +19,7 @@
 
 ### Example:
 
-	cmd> quote.exe market.csv 1000
+	cmd> dotnet run market.csv 1000
 	Requested amount: £1000
 	Rate: 7.0%
 	Monthly repayment: £30.78

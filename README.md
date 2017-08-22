@@ -40,6 +40,8 @@
     cmd> dotnet build -r ubuntu.14.04-x64
     cmd> dotnet publish -c release -r ubuntu.14.04-x64
 
+#### Then run as executable
+
     cmd> [application] [market_file] [loan_amount]
 
 ### Example:

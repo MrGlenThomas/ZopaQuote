@@ -37,7 +37,7 @@
             }
 
             var amountToFulfill = requestAmount;
-            decimal totalInterest = 0;
+            decimal totalRepayment = 0;
 
             while (amountToFulfill > 0)
             {
@@ -49,16 +49,15 @@
                     ? bestOffer.AmountAvailable
                     : amountToFulfill;
 
-                amountToFulfill -= amountUsed;
                 _offerService.DeductAvailable(bestOffer, amountUsed);
 
-                var offerInterest = _interestCalculator.GetInterest(amountUsed, bestOffer.Rate, LoanTermMonths);
-                totalInterest += offerInterest;
+                var offerInterest = _interestCalculator.CompoundInterest(amountUsed, bestOffer.Rate, LoanTermMonths);
+	            totalRepayment += offerInterest;
 
                 amountToFulfill -= amountUsed;
             }
 
-            var quote = _quoteFactory.Create(requestAmount, LoanTermMonths, totalInterest);
+            var quote = _quoteFactory.Create(requestAmount, LoanTermMonths, totalRepayment);
 
             return quote;
         }

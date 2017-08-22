@@ -4,11 +4,12 @@
 
     internal class QuoteFactory : IQuoteFactory
     {
-        public Quote Create(int requestAmount, int termMonths, decimal interest)
+        public Quote Create(int requestAmount, int termMonths, decimal totalRepayment)
         {
-            decimal totalRepayment = requestAmount + interest;
-            decimal monthlyRepayment = totalRepayment / termMonths;
-            var rate = requestAmount / totalRepayment;
+	        var numberOfYears = termMonths / 12;
+
+            var monthlyRepayment = totalRepayment / termMonths;
+	        var rate = (totalRepayment - requestAmount) / numberOfYears / 100;
 
             return new Quote(requestAmount, rate, monthlyRepayment, totalRepayment);
         }

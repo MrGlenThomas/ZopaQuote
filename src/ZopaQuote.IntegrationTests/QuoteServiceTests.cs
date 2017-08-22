@@ -10,9 +10,9 @@
         public class GetQuoteTests
         {
             [Theory]
-            [InlineData(1000, "63.737777777777777777777777778", "0.4358134021337424168468028729", "2294.560")]
-            [InlineData(1400, "98.98888888888888888888888889", "0.3928611516444045347401504097", "3563.600")]
-            [InlineData(2100, "132.63333333333333333333333333", "0.439808997235486303091228952", "4774.800")]
+            [InlineData(1000, "34.252167010380288888888888889", "0.6099398038254353587210365189", "1639.50605244677520")]
+            [InlineData(1400, "68.332023816527966666666666667", "0.5691165974142060861569292177", "2459.95285739500680")]
+            [InlineData(2100, "94.64651409345985555555555556", "0.6163283866506839474528540661", "3407.27450736455480")]
             public void CalculatesCorrectAmounts(int requestAmount, string monthlyRepayment, string rate, string totalRepayment)
             {
                 var expectedMonthlyRepayment = decimal.Parse(monthlyRepayment);

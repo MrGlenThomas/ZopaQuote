@@ -6,14 +6,14 @@
     public class InterestCalculatorTests
     {
         [Theory]
-        [InlineData(2000, 0.5, 10, 10000)]
-        public void GetInterestCalculates(decimal amount, decimal rate, int numberOfPayments, decimal expectedInterest)
+		[InlineData(1000, 0.06, 36, 1196.68)]
+		public void GetInterestCalculates(decimal amount, decimal rate, int numberOfPayments, decimal expectedTotalRepayment)
         {
             var interestCalculator = new InterestCalculator();
 
-            var actualInterest = interestCalculator.GetInterest(amount, rate, numberOfPayments);
+            var actualTotalRepayment = interestCalculator.CompoundInterest(amount, rate, numberOfPayments);
 
-            Assert.Equal(expectedInterest, actualInterest);
+            Assert.Equal(expectedTotalRepayment, actualTotalRepayment);
         }
     }
 }

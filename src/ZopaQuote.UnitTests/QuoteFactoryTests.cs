@@ -7,9 +7,9 @@
     public class QuoteFactoryTests
     {
         [Theory]
-        [InlineData(1000, 100, 1000, "20", "0.5")]
-		[InlineData(1000, 30, 400, "46.666666666666666666666666667", "0.7142857142857142857142857143")]
-        [InlineData(2600, 24, 3049.51, "32.380952380952380952380952381", "0.7926829268292682926829268293")]
+        [InlineData(1000, 100, 1000, "10", "0.5")]
+		[InlineData(1000, 30, 400, "13.333333333333333333333333333", "0.7142857142857142857142857143")]
+        [InlineData(2600, 24, 3049.51, "127.06291666666666666666666667", "0.7926829268292682926829268293")]
         public void CreatesQuoteWithCorrectData(int requestAmount, int termMonths, decimal totalRepayment,
             string monthlyRepayment, string rate)
         {

@@ -18,7 +18,7 @@
 
 	    [Theory]
 	    [InlineData(3049.51, 2600, 24, 0.08000022735552)]
-	    [InlineData(2197.61, 1800, 48, 0.05)]
+	    [InlineData(2197.61, 1800, 48, 0.04999981276536)]
 		public void GetInterestRateCalculates(decimal totalRepayment, decimal amount, int numberOfPayments, decimal expectedRate)
 	    {
 		    var interestCalculator = new InterestCalculator();

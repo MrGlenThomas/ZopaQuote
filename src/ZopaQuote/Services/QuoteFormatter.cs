@@ -16,7 +16,7 @@
             var output = new StringBuilder(90);
 
             output.AppendLine($"Requested amount: £{quote.RequestedAmount}");
-            output.AppendLine($"Rate: {quote.Rate:P2}");
+            output.AppendLine($"Rate: {quote.Rate:P1}");
             output.AppendLine($"Monthly repayment: £{quote.MonthlyRepayment:0.00}");
             output.AppendLine($"Total repayment: £{quote.TotalRepayment:0.00}");
 

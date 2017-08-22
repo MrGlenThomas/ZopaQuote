@@ -20,5 +20,21 @@
 
 			return principal * (decimal)Math.Pow((double)(1 + rate / PaymentsPerYear), PaymentsPerYear * numberOfYears);
 		}
-    }
+
+		/// <summary>
+		/// rate = n[(A/P)^(1/(nt)) - 1]
+		/// </summary>
+		/// <param name="totalRepayment"></param>
+		/// <param name="principalAmount"></param>
+		/// <param name="numberOfPayments"></param>
+		/// <returns></returns>
+		public decimal CalculateRate(decimal totalRepayment, decimal principalAmount, int numberOfPayments)
+		{
+			var numberOfYears = numberOfPayments / PaymentsPerYear;
+
+			var rate = PaymentsPerYear * ((decimal) Math.Pow((double) (totalRepayment / principalAmount), 1.0 / (PaymentsPerYear * numberOfYears)) - 1);
+
+			return rate;
+		}
+	}
 }

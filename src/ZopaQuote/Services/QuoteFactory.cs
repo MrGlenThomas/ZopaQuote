@@ -4,12 +4,17 @@
 
     internal class QuoteFactory : IQuoteFactory
     {
+	    private readonly IInterestCalculator _interestCalculator;
+
+	    public QuoteFactory(IInterestCalculator interestCalculator)
+	    {
+		    _interestCalculator = interestCalculator;
+	    }
+
         public Quote Create(int requestAmount, int termMonths, decimal totalRepayment)
         {
-	        var numberOfYears = termMonths / 12;
-
             var monthlyRepayment = totalRepayment / termMonths;
-	        var rate = (totalRepayment - requestAmount) / numberOfYears / 100;
+	        var rate = _interestCalculator.CalculateRate(totalRepayment, requestAmount, termMonths);
 
             return new Quote(requestAmount, rate, monthlyRepayment, totalRepayment);
         }

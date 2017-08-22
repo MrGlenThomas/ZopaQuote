@@ -9,7 +9,7 @@
 
     cmd> quote.exe market.csv 1500
 
-## The application should produce output in the form:
+## The application produces output in the form:
 
     cmd> [application] [market_file] [loan_amount]
     Requested amount: £XXXX

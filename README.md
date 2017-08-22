@@ -28,9 +28,18 @@
 
 ## Or to build and run self-contained executable
 
+#### Windows
     cmd> dotnet build -r win10-x64
     cmd> dotnet publish -c release -r win10-x64
     
+#### OSX
+    cmd> dotnet build -r osx.10.10-x64
+    cmd> dotnet publish -c release -r osx.10.10-x64
+
+#### Ubuntu
+    cmd> dotnet build -r ubuntu.14.04-x64
+    cmd> dotnet publish -c release -r ubuntu.14.04-x64
+
     cmd> [application] [market_file] [loan_amount]
 
 ### Example:

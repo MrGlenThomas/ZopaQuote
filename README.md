@@ -24,3 +24,19 @@
 	Rate: 7.0%
 	Monthly repayment: £30.78
 	Total repayment: £1108.10
+
+
+## Or to build and run self-contained executable
+
+    cmd> dotnet build -r win10-x64
+    cmd> dotnet publish -c release -r win10-x64
+    
+    cmd> [application] [market_file] [loan_amount]
+
+### Example:
+
+	cmd> quote.exe market.csv 1000
+	Requested amount: £1000
+	Rate: 7.0%
+	Monthly repayment: £30.78
+	Total repayment: £1108.10
